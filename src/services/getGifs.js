@@ -3,9 +3,15 @@ import {API_KEY, API_URL} from './settings'
 const fromApiResponseToGifs = apiResponse => {
   const {data = []} = apiResponse
   if (Array.isArray(data)) {
-    const gifs = data.map(image => image.images.downsized_medium.url)
-  return gifs  
-}}
+    const gifs = data.map(image => {
+      const {images, title, id} = image
+      const { url } = images.downsized_medium
+      return { title, id, url }
+    })
+    return gifs
+  }
+  return []
+}
 
 export default async function getGifs({
   limit = 10,
