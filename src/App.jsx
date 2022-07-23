@@ -6,8 +6,8 @@ function App() {
   const [gifs, setGifs] = useState([])
 
   useEffect(function(){
-    getGifs().then(gifs => setGifs(gifs))
   },[])
+  getGifs({keyword: "Monkey"}).then(gifs => setGifs(gifs))
   
   return (
     <div className="App">
