@@ -20,11 +20,6 @@
     position: absolute;
 }
 
-.Gif small {
-    font-size: 1.5em;
-    color: #fff;
-}
-
 .Gif img {
     width: 100%;
     object-fit: contain;
